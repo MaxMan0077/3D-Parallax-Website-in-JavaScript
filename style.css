@@ -14,13 +14,14 @@ body{
 }
 
 .logo{
-    width: 100px;
+    width: 200px;
 }
 
 header{
     position: absolute;
     z-index: 9999;
     width: 100%;
+    
     padding: 0.9rem 0;
     top: 0;
     left: 0;
@@ -114,6 +115,7 @@ main{
 
 .bg-img{
     position: absolute;
+
     width: 3300px;
     top: calc(50% - 390px);
     left: calc(50% + 10px);
