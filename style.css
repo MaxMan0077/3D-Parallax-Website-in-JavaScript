@@ -7,6 +7,7 @@
 
 body{
     font-family: "Poppings", sans-serif;
+    overflow-x: hidden;
 }
 
 ::selection{
@@ -312,6 +313,28 @@ main{
     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.7));
     pointer-events: none;
 
+}
+
+.clouds {
+    position: relative;
+    height: 200px; /* Adjust this value to match the height of your cloud images */
+}
+
+#cloud1,
+#cloud2 {
+    position: absolute;
+    top: calc(50% - 450px);
+    width: 2000px; /* Adjust this value to match the width of your cloud images */
+    height: 300%;
+    z-index: 40;
+}
+
+#cloud1 {
+    right: 100%; /* Initially positioned off the right side of the screen */
+}
+
+#cloud2 {
+    left: 100%; /* Initially positioned off the left side of the screen */
 }
 
 @media (max-width: 1100px){
