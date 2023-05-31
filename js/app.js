@@ -82,23 +82,14 @@ timeline.from(".text h1", {
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-    var mainTop = $('#main-section').position().top;
-    var section2Top = $('#section2').position().top;
-
-    if (scroll >= mainTop && scroll < section2Top) {
-        // Calculate the percentage of how far the user has scrolled
-        var percentage = ((scroll - mainTop) / (section2Top - mainTop)) * 100;
-
-        // Multiply the percentage by a factor to make the clouds move faster
-        var speed = 1.8;
-        var adjustedPercentage = percentage * speed;
-
-        // Apply the adjusted percentage to the left/right properties of each cloud
-        $('#cloud1').css('right', (100 - adjustedPercentage) + '%');
-        $('#cloud2').css('left', (100 - adjustedPercentage) + '%');
+    var speed = 0.5; // adjust this value to control the speed of the effect
+    var mainTop = $('#main-section').offset().top;
+    var section2Top = $('#section2').offset().top;
+  
+    if (scroll >= mainTop && scroll <= section2Top) {
+      $('#cloudImg').css('bottom', ((scroll - mainTop) * speed) - 100 + 'vh');
     } else {
-        // If the user is not within the transition area, move the clouds off-screen
-        $('#cloud1').css('right', '100%');
-        $('#cloud2').css('left', '100%');
+      $('#cloudImg').css('bottom', '-100vh');
     }
-});
+  });
+  
